@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Messenger App</title>
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="messengerApp">
+        <div class="searchContacts">
+            <form id="searchForm">
+                <p class="searchInput">
+                  <input type="text" id="newInquiry" name="newInquiry" placeholder="Search for people and groups" />
+                  <span class="fa fa-search errspan"></span>
+                </p>
+            </form>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li class="messages">
+                  <a class="icon" id="messages" name="messages" href="#"><i class="fa fa-comments" aria-hidden="true"></i></a>
+                </li>
+                <li class="calls">
+                  <a class="icon" id="calls" name="calls" href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                </li>
+                <li class="groups">
+                  <a class="icon" id="groups" name="groups" href="#"><i class="fa fa-users" aria-hidden="true"></i></a>
+                </li>
+                <li class="contacts">
+                  <a class="icon" id="contacts" name="contacs" href="#"><i class="fa fa-address-book-o" aria-hidden="true"></i></a>
+                </li>
+                <hr />
+            </ul>
+        </div>
+
+        <div class="messagesList">
+          <ul>
+          </ul>
+          <div class="message">
+            <button class="writeMessage"><i class="fa fa-comment fa-3x" aria-hidden="true"></i></button>
+          </div>
+        </div>
+        
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="design.js"></script>
+</body>
+
+</html>

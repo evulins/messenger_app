@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import "http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css";
+
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.2)
+}
+
+:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.2)
+}
+
+::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.2)
+}
+
+:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.2)
+}
+
+html {
+  height: 100%;
+  position: relative
+}
+
+body {
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+h1{
+  margin-bottom:50px;
+}
+h1 {
+  font: 300 3.2em/1.2 'Open Sans', sans-serif;
+  color: white;
+  margin: 0
+}
+
+.messengerApp {
+  border: 2px solid white;
+  width: 400px;
+  height: 800px;
+  margin-left: 20px;
+  padding: 5px 5px;
+  box-shadow: 3px 3px 13px -6px rgba(24,26,26,1);
+  background-color: #613e75;
+}
+
+.searchContacts{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#searchForm {
+  width: 100%;
+}
+
+
+input[type="text"] {
+  padding: 3px 5px 3px 35px;
+  width: 337px;
+  height: 30px;
+  background-color: transparent;
+  font-size: 15px;
+  font-weight:400;
+  color: white;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  border-color: white;
+  border-radius: 8px;
+  position: relative;
+  word-wrap: break-word;
+  
+}
+
+
+
+.errspan {
+  float: left;
+  margin-left: 20px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 1;
+  color: white;
+    }
+
+.menu {
+  display: block;
+  text-align: center;
+  width: 400px;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0px 18px;
+}
+
+.menu ul li {
+  display: block;
+  float: left;
+  cursor: pointer;
+  width: 25%;
+}
+
+.icon {
+  color: white;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  border:0;
+  background-color: transparent;
+  padding: 10px 30px;
+  font-size: 2em;
+}
+
+
+
+.calls:hover ~ hr {
+  margin-left: 25%;
+}
+
+.groups:hover ~ hr {
+  margin-left: 50%;
+}
+
+.contacts:hover ~ hr {
+  margin-left: 75%;
+}
+
+hr {
+  height: .20rem;
+  width: 25%;
+  margin: 0;
+  background: white;
+  border: none;
+  transition: .3s ease-in-out;
+}
+
+.messagesList {
+  background-color: white;
+  padding: 3px 5px 3px 5px;
+  width: 390px;
+  height: 650px;
+}
+
+.message {
+  width: 65px;
+  float: right;
+  padding: 523px 31px 20px 0px;
+}
+
+.writeMessage {
+  border: 0px;
+  color: white;
+  padding: 0px;
+  height: 65px;
+  width: 65px;
+  background-color: #613e75;
+  border-radius: 35px;
+  padding-top: 7px;
+  cursor: pointer;
+ 
+}
