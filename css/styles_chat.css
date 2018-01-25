@@ -169,8 +169,8 @@ input[type="text"] {
 	height: 30px;
 	width: 300px;
 	text-align: center;
-	position: absolute;
-	bottom: 0px;
+	position: relative;
+	bottom: 15px;
 	float:right;
 }
 
