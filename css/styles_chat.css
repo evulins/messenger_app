@@ -3,13 +3,13 @@
 
 
 html {
-  height: 100%;
-  position: relative
+	height: 100%;
+	position: relative
 }
 
 body {
-  background-color: white;
-  font-family: 'Open Sans', sans-serif;
+	background-color: white;
+	font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -55,24 +55,24 @@ body {
 }
 
 .messages {
-  background-color: white;
-  padding: 3px 5px 3px 5px;
-  width: 290px;
-  height: 373px;
-  overflow: scroll;
-  position: relative;
+	background-color: white;
+	padding: 3px 5px 3px 5px;
+	width: 290px;
+	height: 373px;
+	overflow: scroll;
+	position: relative;
 }
 
 img {
-  height: 46px;
-  width: 46px;
-  border-radius: 50%; 
+	height: 46px;
+	width: 46px;
+	border-radius: 50%; 
 }
 
 ul {
-  list-style: none;
-  margin: 0px;
-  padding: 0px 6px 0px 0px;
+	list-style: none;
+	margin: 0px;
+	padding: 0px 6px 0px 0px;
 }
 
 
@@ -87,61 +87,61 @@ p.date {
 div.me {
 	width: 290px;
 	display: inline-block;
-    position: relative;
+	position: relative;
 }
 
 li.myMessage {
-  color: black;
-  background-color: #f0edf2;
-  float: right;
-  display: table;
-  width: auto;
-  clear: both;
-  padding: 12px 14px;
-  border-radius: 30px;
-  margin-bottom: 2px;
+	color: black;
+	background-color: #f0edf2;
+	float: right;
+	display: table;
+	width: auto;
+	clear: both;
+	padding: 12px 14px;
+	border-radius: 30px;
+	margin-bottom: 2px;
 
 }
 
 div.reply {
 	width: 290px;
 	display: inline-block;
-    position: relative;
+	position: relative;
 }
 
 div.reply ul {
- display: table;
+	display: table;
 }
 
 li.reMessage {
-  color: white;
-  background-color: #613e75;
-  float: left;
-  display: table;
-  clear: both;
-  padding: 12px 14px;
-  border-radius: 30px;
-  margin-bottom: 2px;
-  width: auto;
+	color: white;
+	background-color: #613e75;
+	float: left;
+	display: table;
+	clear: both;
+	padding: 12px 14px;
+	border-radius: 30px;
+	margin-bottom: 2px;
+	width: auto;
 }
 
 div.reply .avatar {
-padding-right: 7px;
-float: left;
+	padding-right: 7px;
+	float: left;
 }
 
 
 .reply + .myMessage{
-  border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 .myMessage + .myMessage{
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 .myMessage:last-of-type {
-  border-bottom-right-radius: 30px;
+	border-bottom-right-radius: 30px;
 }
 
 
@@ -154,14 +154,14 @@ float: left;
 }
 
 input[type="text"] {
-  width: 294px;
-  height: 20px;
-  background-color: white;
-  font-size: 10px;
-  font-weight:400;
-  color: #613e75;
-  border-bottom: 0px;
-  word-wrap: break-word;
+	width: 294px;
+	height: 20px;
+	background-color: white;
+	font-size: 10px;
+	font-weight:400;
+	color: #613e75;
+	border-bottom: 0px;
+	word-wrap: break-word;
 }
 
 .bottomBar {

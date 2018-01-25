@@ -86,7 +86,7 @@ input[type="text"] {
   position: relative;
   z-index: 1;
   color: white;
-    }
+}
 
 .menu {
   display: block;
@@ -182,12 +182,12 @@ img {
 .textMessage p.text {
   color:#a6a8ad;
   overflow: hidden;
-   /*text-overflow: ellipsis;*/
-   display: -webkit-box;
-   -webkit-box-orient: vertical;
-   -webkit-line-clamp: 1; /* number of lines to show */
-   line-height: 2;        /* fallback */
-   max-height: 2;       
+  /*text-overflow: ellipsis;*/
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-height: 2;        /* fallback */
+  max-height: 2;       
 
 }
 
@@ -236,5 +236,5 @@ img {
   padding-top: 7px;
   cursor: pointer;
   position: absolute;
- 
+  
 }
