@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import "http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css";
+
+
+html {
+  height: 100%;
+  position: relative
+}
+
+body {
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+.chat {
+	display: block;
+	border: 2px solid #613e75;
+	width: 300px;
+	height: 450px;
+}
+
+.topBar {
+	display: block;
+	height: 30px;
+	width: 300px;
+	background-color: #613e75;
+	text-align: center;
+}
+
+.tools {
+	padding-top: 9px;
+	padding-right: 10px;
+	color: white;
+	float: right;
+	font-size: 90%;
+}
+
+.online {
+	color: #7fd16e;
+	float: left;
+	font-size: 80%;
+	border: 0px;
+	float: left;
+	padding-top: 10px;
+	padding-left: 4px;
+}
+
+.name {
+	color: white;
+	float: left;
+	font-size: 90%;
+	margin: 5px;
+}
+
+.messages {
+  background-color: white;
+  padding: 3px 5px 3px 5px;
+  width: 290px;
+  height: 373px;
+  overflow: scroll;
+  position: relative;
+}
+
+img {
+  height: 46px;
+  width: 46px;
+  border-radius: 50%; 
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px 6px 0px 0px;
+}
+
+
+p.date {
+	color:grey;
+	text-align: center;
+	height: 10px;
+	font-size: 80%;
+}
+
+
+div.me {
+	width: 290px;
+	display: inline-block;
+    position: relative;
+}
+
+li.myMessage {
+  color: black;
+  background-color: #f0edf2;
+  float: right;
+  display: table;
+  width: auto;
+  clear: both;
+  padding: 12px 14px;
+  border-radius: 30px;
+  margin-bottom: 2px;
+
+}
+
+div.reply {
+	width: 290px;
+	display: inline-block;
+    position: relative;
+}
+
+div.reply ul {
+ display: table;
+}
+
+li.reMessage {
+  color: white;
+  background-color: #613e75;
+  float: left;
+  display: table;
+  clear: both;
+  padding: 12px 14px;
+  border-radius: 30px;
+  margin-bottom: 2px;
+  width: auto;
+}
+
+div.reply .avatar {
+padding-right: 7px;
+float: left;
+}
+
+
+.reply + .myMessage{
+  border-bottom-right-radius: 5px;
+}
+
+.myMessage + .myMessage{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.myMessage:last-of-type {
+  border-bottom-right-radius: 30px;
+}
+
+
+.newMessage {
+	display: block;
+	height: 30px;
+	width: 300px;
+	text-align: center;
+	position: relative;
+}
+
+input[type="text"] {
+  width: 294px;
+  height: 20px;
+  background-color: white;
+  font-size: 10px;
+  font-weight:400;
+  color: #613e75;
+  border-bottom: 0px;
+  word-wrap: break-word;
+}
+
+.bottomBar {
+	display: block;
+	height: 30px;
+	width: 300px;
+	text-align: center;
+	position: absolute;
+	bottom: -50px;
+	float:right;
+}
+
+.like {
+	float: right;
+	padding-right: 5px;
+	padding-top: 4px;
+	font-size: 120%;
+}
