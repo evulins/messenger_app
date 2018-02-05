@@ -5,6 +5,8 @@
   <title>Messenger App</title>
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/newMessage.css">
+  <link rel="stylesheet" href="css/styles_chat.css">
 </head>
 
 <body>
@@ -23,7 +25,7 @@
       <li class="messages">
         <a class="icon" id="messages" name="messages" href="#"><i class="fa fa-comments" aria-hidden="true"></i></a>
       </li>
-      <li class="calls">
+      <li class="calls"> 
         <a class="icon" id="calls" name="calls" href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
       </li>
       <li class="groups">
@@ -37,8 +39,8 @@
   </div>
 
   <div class="messagesList">
-    <ul>
-      <li id="one">
+    <ul id="messagesList">
+  <!--     <li id="one">
         <div class="avatar">
           <img src="avatars/dawid.jpg">
         </div>
@@ -50,8 +52,8 @@
           <p class="date"><span>9:45 AM</span></p>
           <span class="fa fa-check-circle seen"></span>
         </div>
-      </li>
-      <li id="two">
+      </li> -->
+      <!--<li id="two">
         <div class="avatar">
           <img src="avatars/awatar.jpg">
         </div>
@@ -169,19 +171,157 @@
           <p class="date"><span>Jan 22</span></p>
           <span class="fa fa-check-circle seen"></span>            
         </div>
-      </li>
+      </li>-->
     </ul>
     
   </div>
 
 
-  <div class="newMessage">
+  <div class="iconButton">
     <button class="writeMessage"><i class="fa fa-comment fa-3x" aria-hidden="true"></i></button>
   </div>
 
-</div>
+ </div>
+
+<div class="chatWindow" style="display: none;">
+
+
+  <div class="top">
+    <a href="#"><p class="title">New Message</p></a>
+    <a href="#"><span class="fa fa-times tools"></span></a>
+  </div>
+
+
+  <div class="dropdownList">
+    <p>To:</p>
+    <form>
+      <select name="friendList">
+        <option value="" disabled selected>Choose...</option>
+        <option value="Dawid Dawcikowski">Dawid Dawcikowski</option>
+        <option value="Ewu Dawcikowska">Ewu Dawcikowska</option>
+        <option value="Lola">Lola</option>
+        <option value="Stefka">Stefka</option>
+        <option value="Buka Bukiszon">Buka Bukiszon</option>
+        <option value="Jebułka">Jebułka</option>
+        <option value="Evulins">Evulins</option>
+      </select>
+    </form>
+  </div>
+  
+  <div class="conversation">  
+  </div>
+
+  <div class="new">
+    <input type="text" name="text" placeholder="Type a message" />
+  </div>
+    
+  <div class="bottom">
+    <a href="#"><span class="fa fa-thumbs-o-up like"></span></a>
+  </div>
+
+ </div>
+
+ <div class="chat" style="display: none;">
+    <div class="topBar">
+      <a href="#"><span class="fa fa-circle online"></span></a>
+      <a href="#"><p class="name">Dawid Dawcikowski</p></a>
+      <a href="#"><span class="fa fa-plus tools"></span></a>
+      <a href="#"><span class="fa fa-phone tools"></span></a>
+      <a href="#"><span class="fa fa-cog tools"></span></a>
+      <a href="#"><span class="fa fa-times tools" id="close"></span></a>
+    </div>
+
+    <div class="chatMessages">
+
+      <div class="me">
+        <ul>
+          <p class="date">21/01/2018 23:27</p>
+          <li class="myMessage"><span>Hey! Come over for a nice falafel :)</span></li>
+          <li class="myMessage"><span>And for a glass of wine as well ;)</span></li>
+        </ul>
+      </div>
+
+
+      <div class="reply">
+        <p class="date">Today 19:46</p>
+        <div class="avatar">
+          <img src="avatars/dawid.jpg">
+        </div>
+        <ul>
+          <li class="reMessage"><span>Hi there! What time? Do I nedd to bring something</span></li>
+        </ul>
+      </div>
+
+      <div class="me">
+        <ul>
+          <p class="date">Today 19:46</p>
+          <li class="myMessage"><span>Tomorrow around 6pm. You can bring some dessert :D</span></li>
+        </ul>
+      </div>
+
+
+      <div class="reply">
+        <p class="date">Today 19:49</p>
+        <div class="avatar">
+          <img src="avatars/dawid.jpg">
+        </div>
+        <ul>
+          <li class="reMessage"><span>All right</span></li>
+          <li class="reMessage"><span>Chocolate brownie will by ok?</span></li>
+        </ul>
+      </div>
+
+      <div class="me">
+        <ul>
+          <p class="date">Today 19:50</p>
+          <li class="myMessage"><span>Of course!</span></li>
+          <li class="myMessage"><span> :) </span></li>
+          <li class="myMessage"><span>That it's my favourite!</span></li>
+        </ul>
+      </div>
+
+
+      <div class="reply">
+        <p class="date">Today 19:51</p>
+        <div class="avatar">
+          <img src="avatars/dawid.jpg">
+        </div>
+        <ul>
+          <li class="reMessage"><span>Great! See you then!</span></li>
+        </ul>
+      </div>
+
+      <div class="me">
+        <ul>
+          <p class="date">Today 19:52</p>
+          <li class="myMessage"><span>Bye!</span></li>
+        </ul>
+      </div>
+
+
+      <div class="reply">
+        <p class="date">Today 19:53</p>
+        <div class="avatar">
+          <img src="avatars/dawid.jpg">
+        </div>
+        <ul>
+          <li class="reMessage"><span>:*</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="newMessage">
+      <input type="text" name="text" placeholder="Type a message" />
+    </div>
+    
+    <div class="bottomBar">
+      <a href="#"><span class="fa fa-thumbs-o-up like"></span></a>
+    </div>
+
+  </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="moment.min.js"></script>
 <script src="design.js"></script>
 </body>
 

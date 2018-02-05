@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import "http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css";
+
+
+
+html {
+	height: 100%;
+	position: relative
+}
+
+body {
+	background-color: white;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.chatWindow {
+	display: block;
+	border: 2px solid #613e75;
+	width: 300px;
+	height: 450px;
+}
+
+.top {
+	display: block;
+	height: 30px;
+	width: 300px;
+	background-color: #613e75;
+	text-align: center;
+}
+
+.dropdownList {
+    display: block;
+	height: 30px;
+	width: 300px;
+	border-bottom: 1px solid grey;
+}
+
+.dropdownList p {
+	margin: 5px;
+	float: left;
+	width: 30px;
+	font-size: 95%;
+}
+.dropdownList form {
+	padding-top: 3px;
+}
+.dropdownList form select {
+	float: left;
+	height: 25px;
+	width: 255px;
+	background-color: transparent;
+	font-family: 'Open Sans', sans-serif;
+	border: none;
+}
+
+
+.top a .tools {
+	padding-top: 9px;
+	padding-right: 10px;
+	color: white;
+	float: right;
+	font-size: 90%;
+}
+
+.title {
+	color: white;
+	float: left;
+	font-size: 90%;
+	margin: 5px;
+}
+
+.conversation {
+	background-color: white;
+	padding: 3px 5px 3px 5px;
+	width: 290px;
+	height: 340px;
+	overflow: scroll;
+	position: relative;
+}
+
+.new {
+	display: block;
+	height: 30px;
+	width: 300px;
+	text-align: center;
+	position: relative;
+}
+
+.new input[type="text"] {
+	width: 294px;
+	height: 20px;
+	background-color: white;
+	font-size: 10px;
+	font-weight:400;
+	color: #613e75;
+	border-bottom: 0px;
+	word-wrap: break-word;
+	::-webkit-input-placeholder {
+  color: rgb(34, 27, 38)
+}
+
+:-moz-placeholder {
+  color: rgb(34, 27, 38)
+}
+
+::-moz-placeholder {
+  color: rgb(34, 27, 38)
+}
+
+:-ms-input-placeholder {
+  color: rgb(34, 27, 38)
+}
+}
+
+.bottom {
+	display: block;
+	height: 30px;
+	width: 300px;
+	text-align: center;
+	position: relative;
+	bottom: 11px;
+	float:right;
+}
+
+.like {
+	float: right;
+	padding-right: 5px;
+	padding-top: 4px;
+	font-size: 120%;
+}

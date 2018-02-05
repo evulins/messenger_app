@@ -1,21 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import "http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css";
 
-::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.2)
-}
 
-:-moz-placeholder {
-  color: rgba(255, 255, 255, 0.2)
-}
-
-::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.2)
-}
-
-:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.2)
-}
 
 html {
   height: 100%;
@@ -60,7 +46,7 @@ h1 {
 }
 
 
-input[type="text"] {
+p.searchInput input[type="text"] {
   padding: 3px 5px 3px 35px;
   width: 337px;
   height: 30px;
@@ -75,6 +61,22 @@ input[type="text"] {
   border-radius: 8px;
   position: relative;
   word-wrap: break-word;
+
+-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.2)
+}
+
+:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.2)
+}
+
+:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.2)
+}
+
+:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.2)
+}
   
 }
 
@@ -156,33 +158,38 @@ hr {
 .messagesList ul li {
   display: block;
   position: relative;
-  padding-bottom: 57px;
-  height: 20px;
+  height: 80px;
+  width:380px;
+  overflow: hidden;
 }
 
 img {
   height: 70px;
   width: 70px;
   border-radius: 50%;
-  float: left; 
+  float: left;
+  overflow: hidden;
 }
 
 .textMessage {
   display: block;
   float: left;
   padding-top: 10px;
-  padding-left: 5px;
-  width: 200px;
+  padding-left: 7px;
+  width: 218px;
+  height: 75px;
+  overflow: hidden;
 }
 
 .textMessage p {
-  margin: 3px;
+  margin: 0px;
+  width: 100%;
+  line-height: normal;
 }
 
 .textMessage p.text {
   color:#a6a8ad;
   overflow: hidden;
-  /*text-overflow: ellipsis;*/
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1; /* number of lines to show */
@@ -193,17 +200,21 @@ img {
 
 .messageDetails {
   display: block;
-  float: right;
+  float: left;
   width: 80px;
+  height: 75px;
   padding-top: 10px;
   padding-right: 1px;
   text-align: center;
-
-
+  overflow: hidden;
 }
 
 .messageDetails p.date {
-  margin: 3px;
+line-height: normal;
+margin: 0px;
+width: 100%;
+float: left;
+font-size: 80%
 
 }
 
@@ -211,11 +222,14 @@ img {
  font-size: 110%;
  color: #613e75;
  line-height: 2;
+ width: 100%;
+ float: left;
+ margin-top: 6px;
 
 
 }
 
-.newMessage {
+.iconButton {
   width: 65px;
   height: 65px;
   z-index: 1;
@@ -237,4 +251,12 @@ img {
   cursor: pointer;
   position: absolute;
   
+}
+
+.chatWindow {
+  display: none;
+}
+
+#one {
+cursor: pointer;
 }
