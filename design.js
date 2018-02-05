@@ -224,7 +224,7 @@ function showConversations() {
 
 function showChat(conversation) {
   // dodaj kolejne wiadomości z listy conversation.messages jako dzieci elementu #chatMessages
-  // wzoruj się na tym jak wyświetlane są konwersacje w funkcji showConversations
+  // wzoruj się na tym jak dodawane są konwersacje w funkcji showConversations
   // będziesz potrzebowała dwóch zmiennych:
   // * dla kody HTML który będzie wyświetlony dla twojej wiadomości
   // * dla kody HTML który będzie wyświetlony dla wiadomości znajomego
