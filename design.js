@@ -163,18 +163,23 @@ var conversations = {
     // jeśli konwersacja z tym znajomym jeszcze nie istnieje to
     // dodaj nową konwersację i
     // dodaj nową wiadomość do obiektu lastMessage
-//     if (!friend.messages) {
-//       return conversations.list.
-//      } else {
+    //     if (!friend.messages) {
+    //       return conversations.list.
+    //      } else {
 
-//      }
-    
+    //      }
 
-//     // jeśli konwersacja z tym znajomym już istnieje to
-//     // przenieś wiadomość z obiektu lastMessage dla tej konwersacji do listy messages
-//     // zastąp wartości w obiekcie lastMessage dla tej konwersacji nową wiadomością
-//   }
-// };
+
+    //     // jeśli konwersacja z tym znajomym już istnieje to
+    //     // przenieś wiadomość z obiektu lastMessage dla tej konwersacji do listy messages
+    //     // zastąp wartości w obiekcie lastMessage dla tej konwersacji nową wiadomością
+  },
+  getConversationWith(full_name) {
+    // np. full_name = "Dawid Dawcikowski"
+    // zaimplementuj funkcję, która zwróci obiekt konwersacji
+    // z osobą o imieniu i nazwisko takim jak w zmiennej full_name
+  }
+};
 
 // na podstawie danych z obiektu conversations
 // wyświetla wszystkie elementy na liście
@@ -202,7 +207,11 @@ function showConversations() {
       $("li").click(function(event) {
       event.preventDefault();
       $(".messengerApp").hide();
-      $(".chat").show(); 
+      $(".chat").show();
+      // 1. pobierz imię i nazwisko z HTML klikniętego <li> i zapisz to do zmiennej
+      // 2. wywołaj funkcję getConversationWith i przekaż jako parametr wcześniej pobrane imię i nazwisko
+      //    żeby pobrać obiekt konwersacji z tą osobą i zapisz go do zmiennej
+      // 3. wywołaj funkcję showChat i przekaż jako paramert obiekt conversation, który pobrałaś wcześniej
     });
 
     $(".topBar #close").click(function(event){
@@ -213,9 +222,13 @@ function showConversations() {
   };
 }
 
-// function showChat() {
-//   for ()
-// }
+function showChat(conversation) {
+  // dodaj kolejne wiadomości z listy conversation.messages jako dzieci elementu #chatMessages
+  // wzoruj się na tym jak dodawane są konwersacje w funkcji showConversations
+  // będziesz potrzebowała dwóch zmiennych:
+  // * dla kody HTML który będzie wyświetlony dla twojej wiadomości
+  // * dla kody HTML który będzie wyświetlony dla wiadomości znajomego
+}
 
 function getIcon(dupa) {
   if (dupa.delivered && dupa.seen) {
@@ -248,4 +261,3 @@ $(".top .tools").click(function(event){
   console.log("DSsdds")
   showConversations();
 })();
-
