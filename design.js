@@ -54,7 +54,7 @@ var conversations = {
     {
       friend: {
         name: 'Stefka',
-        surname: '',
+        surname: 'Stefka',
         avatar: 'stefka.jpg'
       },
       messages: [
@@ -83,7 +83,7 @@ var conversations = {
     {
       friend: {
         name: 'Lola',
-        surname: '',
+        surname: 'Lola',
         avatar: 'lola.jpg'
       },
       messages: [
@@ -170,7 +170,7 @@ var conversations = {
     {
       friend: {
         name: 'Jebułka',
-        surname: '',
+        surname: 'Bułka',
         avatar: 'jebulka.jpg'
       },
       messages: [
@@ -199,7 +199,7 @@ var conversations = {
     {
       friend: {
         name: 'Evulins',
-        surname: '',
+        surname: 'Sar',
         avatar: 'ewu.jpg'
       },
       messages: [
@@ -257,7 +257,7 @@ var conversations = {
     {
       friend: {
         name: 'Ewu',
-        surname: 'Dawciskowka',
+        surname: 'Dawcikowska',
         avatar: 'awatar.jpg'
       },
       messages: [
@@ -287,22 +287,51 @@ var conversations = {
   getAll: function() {
    return conversations.list;
   },
+
+
+
+/*{
+      friend: {
+        name: 'Dawid',
+        surname: 'Dawcikowski',
+        avatar: 'dawid.jpg'
+      },
+      messages: [
+        {
+          text: 'Dawcik. Dlaczego śmierdzisz kupą?',
+          sentAt: 'Tue Feb 06 2018 13:02:21 GMT+0100 (CET)',
+          sentByMe: true,
+          seen: false,
+          delivered: false
+        },
+        {
+          text: 'bo nie myłem tyłka od środy',
+          sentAt: 'Tue Feb 05 2018 13:02:21 GMT+0100 (CET)',
+          sentByMe: false,
+          seen: false,
+          delivered: false
+        }
+      ],
+      lastMessage: {
+        text: 'Hejka',
+        sentAt: 'Tue Feb 04 2018 13:02:21 GMT+0100 (CET)',
+        sentByMe: false,
+        seen: false,
+        delivered: false
+      }
+    },
+    */
   addMessage: function(friend, message) {
-    
-    // jeśli konwersacja z tym znajomym jeszcze nie istnieje to
-    // dodaj nową konwersację i
-    // dodaj nową wiadomość do obiektu lastMessage
-    //     if (!friend.messages) {
-    //       return conversations.list.
-    //      } else {
+    var conversation = conversations.getConversationWith(friend);
+    conversation.lastMessage.text = message;
+    conversation.lastMessage.sentAt = new Date().toString();
+    conversation.lastMessage.sentByMe = true;
+    conversation.lastMessage.seen = false;
+    conversation.lastMessage.delivered = true;
 
-    //      }
-
-
-    //     // jeśli konwersacja z tym znajomym już istnieje to
-    //     // przenieś wiadomość z obiektu lastMessage dla tej konwersacji do listy messages
-    //     // zastąp wartości w obiekcie lastMessage dla tej konwersacji nową wiadomością
   },
+
+
   getConversationWith: function(full_name) {
     var result = conversations.list.filter(function (element) {
       return element.friend.name + " " + element.friend.surname === full_name;
@@ -347,44 +376,6 @@ function showConversations() {
 }
 
 function showChat(conversation) {
-  /*
-  {
-    friend: {
-      name: 'Dawid',
-      surname: 'Dawcikowski',
-      avatar: 'dawid.jpg'
-    },
-    messages: [
-      {
-        text: 'Dawcik. Dlaczego śmierdzisz kupą?',
-        sentAt: 'Tue Jan 01 2018 08:31:38 GMT+0100 (CET)',
-        sentByMe: true,
-        seen: false,
-        delivered: false
-      },
-      {
-        text: 'bo nie myłem tyłka od środy',
-        sentAt: 'Tue Jan 01 2018 08:31:57 GMT+0100 (CET)',
-        sentByMe: false,
-        seen: false,
-        delivered: false
-      }
-    ],
-    lastMessage: {
-      text: 'Hejka',
-      sentAt: 'Tue Jan 02 2018 21:39:57 GMT+0100 (CET)',
-      sentByMe: false,
-      seen: false,
-      delivered: false
-    }
-  }
-
-  */
-  // dodaj kolejne wiadomości z listy conversation.messages jako dzieci elementu #chatMessages
-  // wzoruj się na tym jak dodawane są konwersacje w funkcji showConversations
-  // będziesz potrzebowała dwóch zmiennych:
-  // * dla kody HTML który będzie wyświetlony dla twojej wiadomości
-  // * dla kody HTML który będzie wyświetlony dla wiadomości znajomego
   
   var allMessages = conversation.messages.concat([conversation.lastMessage]);
   allMessages.sort(function(a, b) {
@@ -474,4 +465,19 @@ $(".top .tools").click(function(event){
   //    żeby pobrać obiekt konwersacji z tą osobą i zapisz go do zmiennej
   // 3. wywołaj funkcję showChat i przekaż jako paramert obiekt conversation, który pobrałaś wcześniej
   });
+  
+  $(".newForm").submit(function(event) {
+    event.preventDefault();
+    var newMessage = $(".new input").val();
+    var person = $("select").val();
+    conversations.addMessage(person, newMessage);
+    //ukrywam newmessage pokazuje conversation, uzywam funckji showchat
+    $(".chatWindow").hide();
+    $(".chat").show();
+    var conversation = conversations.getConversationWith(person);
+    showChat(conversation);
+    changeName(person);
+  });
+
+
 })();
