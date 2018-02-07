@@ -420,6 +420,7 @@ function changeName(full_name) {
   $(".chat .topBar a p.name").text(full_name);
 }
 
+
 function getIcon(dupa) {
   if (dupa.delivered && dupa.seen) {
     return '<span class="fa fa-check-circle seen"></span>'
@@ -438,11 +439,19 @@ $(".writeMessage").click(function(event) {
 });
 
 
-$(".top .tools").click(function(event){
+$(".top .tools").click(function(event) {
  event.preventDefault();
-  $(".chatWindow").hide();
-  $(".messengerApp").show();
+ $(".chatWindow").hide();
+ $(".messengerApp").show();
+
 });
+
+$(".like").click(function(event) {
+  event.preventDefault();
+  var obj = $(this);
+
+  });
+
 
 
 
@@ -468,7 +477,7 @@ $(".top .tools").click(function(event){
   
   $(".newForm").submit(function(event) {
     event.preventDefault();
-    var newMessage = $(".new input").val();
+    var newMessage = $(".bottom input").val();
     var person = $("select").val();
     conversations.addMessage(person, newMessage);
     //ukrywam newmessage pokazuje conversation, uzywam funckji showchat
@@ -477,6 +486,7 @@ $(".top .tools").click(function(event){
     var conversation = conversations.getConversationWith(person);
     showChat(conversation);
     changeName(person);
+    $(".newForm")[0].reset();
   });
 
 
