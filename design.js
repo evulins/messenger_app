@@ -323,6 +323,15 @@ var conversations = {
     */
   addMessage: function(friend, message) {
     var conversation = conversations.getConversationWith(friend);
+    var oldMessage = {
+      text: conversation.lastMessage.text,
+      sentAt: conversation.lastMessage.sentAt,
+      sentByMe: conversation.lastMessage.sentByMe,
+      seen: conversation.lastMessage.seen,
+      delivered: conversation.lastMessage.delivered
+    }
+    conversation.messages.push(oldMessage);
+
     conversation.lastMessage.text = message;
     conversation.lastMessage.sentAt = new Date().toString();
     conversation.lastMessage.sentByMe = true;
@@ -387,11 +396,19 @@ function showChat(conversation) {
   for (var i = 0; i < allMessages.length; i++) {
     var current = allMessages[i];
     var wrappedDate = moment(new Date(current.sentAt));
+    var messageContent;
+
+    if (current.text.length > 0) {
+      messageContent = current.text;  
+    } else {
+      messageContent = '<div class="fa fa-thumbs-o-up like"></div>';
+    }
+
     var myMessage = `
       <div class="me">
           <ul>
             <p class="date">${wrappedDate.fromNow()}</p>
-            <li class="myMessage"><span>${current.text}</span></li>
+            <li class="myMessage"><span>${messageContent}</span></li>
           </ul>
         </div>
     `;
@@ -403,7 +420,7 @@ function showChat(conversation) {
           <img src="avatars/${conversation.friend.avatar}">
         </div>
         <ul>
-          <li class="reMessage"><span>${current.text}</span></li>
+          <li class="reMessage"><span>${messageContent}</span></li>
         </ul>
       </div>
     `;
@@ -446,12 +463,6 @@ $(".top .tools").click(function(event) {
 
 });
 
-$(".like").click(function(event) {
-  event.preventDefault();
-  var obj = $(this);
-
-  });
-
 
 
 
@@ -469,25 +480,59 @@ $(".like").click(function(event) {
     changeName(person);
     var conversation = conversations.getConversationWith(person);
     showChat(conversation);
-  // 1. pobierz imię i nazwisko z HTML klikniętego <li> i zapisz to do zmiennej
-  // 2. wywołaj funkcję getConversationWith i przekaż jako parametr wcześniej pobrane imię i nazwisko
-  //    żeby pobrać obiekt konwersacji z tą osobą i zapisz go do zmiennej
-  // 3. wywołaj funkcję showChat i przekaż jako paramert obiekt conversation, który pobrałaś wcześniej
+
   });
   
   $(".newForm").submit(function(event) {
     event.preventDefault();
     var newMessage = $(".bottom input").val();
     var person = $("select").val();
+     var minLength = 1;
+
+    if (newMessage.length < minLength) {
+        alert("Your message must have at least " + minLength + " character");
+        return;
+      }
+
     conversations.addMessage(person, newMessage);
     //ukrywam newmessage pokazuje conversation, uzywam funckji showchat
     $(".chatWindow").hide();
     $(".chat").show();
+    clearChat();
     var conversation = conversations.getConversationWith(person);
     showChat(conversation);
     changeName(person);
     $(".newForm")[0].reset();
   });
 
+  $(".chatForm").submit(function(event) {
+    event.preventDefault();
+    var newMessage = $(".chatForm .bottom input").val();
+    var person = $(".chat").find(".topBar .name").text();
+    var minLength = 1;
+
+    if (newMessage.length < minLength) {
+        alert("Your message must have at least " + minLength + " character");
+        return;
+      }
+    clearChat();
+    conversations.addMessage(person, newMessage);
+    var conversation = conversations.getConversationWith(person);
+    showChat(conversation);
+    $(".chatForm")[0].reset();
+    
+  });
+
+
+  $(".likeButton").click(function(event) {
+    event.preventDefault();
+    clearChat();
+    var newMessage = "";
+    var person = $(".chat").find(".topBar .name").text();
+    conversations.addMessage(person, newMessage);
+    var conversation = conversations.getConversationWith(person);
+    showChat(conversation);
+
+  });
 
 })();
