@@ -451,11 +451,25 @@ function changeName(full_name) {
   $(".chat .topBar a p.name").text(full_name);
 }
 
+function registerClickConversation() {
+  $("li#conversation").click(function(event) {
+    event.preventDefault();
+    $(".messengerApp").hide();
+    $(".chat").show();
+    clearChat();
+    var person = $(this).find(".textMessage .name span").text();
+    changeName(person);
+    var conversation = conversations.getConversationWith(person);
+    showChat(conversation);
+    console.log("dupa");
 
-function getIcon(dupa) {
-  if (dupa.delivered && dupa.seen) {
+  });
+}
+
+function getIcon(message) {
+  if (message.delivered && message.seen) {
     return '<span class="fa fa-check-circle seen"></span>'
-  } else if (dupa.delivered && !dupa.seen) {
+  } else if (message.delivered && !message.seen) {
     return '<span class="fa fa-circle seen"></span>'
   } else {
     return '<span class="fa fa-circle-o seen"></span>'
@@ -484,22 +498,10 @@ $(".top .tools").click(function(event) {
 (function() {
   console.log("DSsdds")
   showConversations(conversations.getAll());
-
-  $("li#conversation").click(function(event) {
-    event.preventDefault();
-    $(".messengerApp").hide();
-    $(".chat").show();
-    clearChat();
-    var person = $(this).find(".textMessage .name span").text();
-    changeName(person);
-    var conversation = conversations.getConversationWith(person);
-    showChat(conversation);
-
-  });
   
   $(".newForm").submit(function(event) {
     event.preventDefault();
-    var newMessage = $(".bottom input").val();
+    var newMessage = $(".newForm .bottom input").val();
     var person = $("select").val();
      var minLength = 1;
 
@@ -518,6 +520,22 @@ $(".top .tools").click(function(event) {
     changeName(person);
     $(".newForm")[0].reset();
   });
+
+  $(".newLikeButton").click(function(event) {
+    event.preventDefault();
+    var newMessage = $(".newLikeButton").val();
+    var person = $("select").val();
+    conversations.addMessage(person, newMessage);
+
+    $(".chatWindow").hide();
+    $(".chat").show();
+    clearChat();
+    var conversation = conversations.getConversationWith(person);
+    showChat(conversation);
+    changeName(person);
+  });
+
+  registerClickConversation();
 
   $(".chatForm").submit(function(event) {
     event.preventDefault();
@@ -550,10 +568,11 @@ $(".top .tools").click(function(event) {
 
   $("#searchForm").submit(function(event) {
     event.preventDefault();
-    var input = $("input").val();
+    var input = $("#searchForm input").val();
     var result = conversations.searchConversations(input);
     clearConversations();
     showConversations(result);
+    registerClickConversation();
   });
 
 })();
