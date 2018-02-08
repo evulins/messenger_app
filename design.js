@@ -342,23 +342,33 @@ var conversations = {
 
 
   getConversationWith: function(full_name) {
-    var result = conversations.list.filter(function (element) {
+    var result = conversations.list.filter(function(element) {
       return element.friend.name + " " + element.friend.surname === full_name;
     });
     return result[0];
+  },
+
+  searchConversations: function(phrase) {
+    var results = conversations.list.filter(function(element) {
+      var name = element.friend.name.toUpperCase();
+      var surname = element.friend.surname.toUpperCase();
+      var searchContent = phrase.toUpperCase();
+      return name.indexOf(searchContent) > -1 || surname.indexOf(searchContent) > -1;
+    });
+    return results;
   }
 
 };
 
 // na podstawie danych z obiektu conversations
 // wyświetla wszystkie elementy na liście
-function showConversations() {
+function showConversations(conversationList) {
   // w pętli dodaj wszystkie konwersacje do listy #messages
-  for (var i = 0; i < conversations.getAll().length; i++) {
-    var current = conversations.getAll()[i];
+  for (var i = 0; i < conversationList.length; i++) {
+    var current = conversationList[i];
     var wrappedDate = moment(new Date(current.lastMessage.sentAt));
     var conversation = `
-      <li id="one">
+      <li id="conversation">
         <div class="avatar">
           <img src="avatars/${current.friend.avatar}">
         </div>
@@ -433,6 +443,10 @@ function clearChat() {
   $(".chatMessages").empty();
 }
 
+function clearConversations() {
+  $("ul#messagesList").empty();
+}
+
 function changeName(full_name) {
   $(".chat .topBar a p.name").text(full_name);
 }
@@ -469,9 +483,9 @@ $(".top .tools").click(function(event) {
 // ta funkcja wywoła się od razy po przeczytaniu tego pliku (po każdym odświeżeniu strony)
 (function() {
   console.log("DSsdds")
-  showConversations();
+  showConversations(conversations.getAll());
 
-  $("li").click(function(event) {
+  $("li#conversation").click(function(event) {
     event.preventDefault();
     $(".messengerApp").hide();
     $(".chat").show();
@@ -532,7 +546,14 @@ $(".top .tools").click(function(event) {
     conversations.addMessage(person, newMessage);
     var conversation = conversations.getConversationWith(person);
     showChat(conversation);
+  });
 
+  $("#searchForm").submit(function(event) {
+    event.preventDefault();
+    var input = $("input").val();
+    var result = conversations.searchConversations(input);
+    clearConversations();
+    showConversations(result);
   });
 
 })();
