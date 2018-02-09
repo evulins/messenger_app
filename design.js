@@ -360,6 +360,7 @@ var conversations = {
 
 };
 
+
 // na podstawie danych z obiektu conversations
 // wyświetla wszystkie elementy na liście
 function showConversations(conversationList) {
@@ -437,6 +438,11 @@ function showChat(conversation) {
 
     $(".chatMessages").append(current.sentByMe ? myMessage : reply);
   }
+  $(".chatMessages").scroll();
+  $(".chatMessages").animate({ 
+      scrollTop: 5220
+    }, 10440);
+
 }
 
 function clearChat() {
@@ -461,7 +467,6 @@ function registerClickConversation() {
     changeName(person);
     var conversation = conversations.getConversationWith(person);
     showChat(conversation);
-    console.log("dupa");
 
   });
 }
@@ -533,6 +538,7 @@ $(".top .tools").click(function(event) {
     var conversation = conversations.getConversationWith(person);
     showChat(conversation);
     changeName(person);
+  
   });
 
   registerClickConversation();
@@ -551,6 +557,7 @@ $(".top .tools").click(function(event) {
     conversations.addMessage(person, newMessage);
     var conversation = conversations.getConversationWith(person);
     showChat(conversation);
+
     $(".chatForm")[0].reset();
     
   });
@@ -565,6 +572,8 @@ $(".top .tools").click(function(event) {
     var conversation = conversations.getConversationWith(person);
     showChat(conversation);
   });
+
+
 
   $("#searchForm").submit(function(event) {
     event.preventDefault();
