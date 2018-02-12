@@ -14,14 +14,14 @@ body {
 }
 
 .chatWindow {
-  border: 3px solid #613e75;
-  width: 400px;
-  height: 600px;
-  margin-left: 20px;
-  margin-right: 0px;
-  box-shadow: rgba(24,26,26,1);
-  background-color: white;
-  position: relative;
+	border: 3px solid #613e75;
+	width: 400px;
+	height: 600px;
+	margin-left: 20px;
+	margin-right: 0px;
+	box-shadow: rgba(24,26,26,1);
+	background-color: white;
+	position: relative;
 }
 
 .newform {
@@ -29,7 +29,7 @@ body {
 	height: 573px;
 	float: left;
 	display: block;
-    text-align: center;
+	text-align: center;
 }
 
 .top {
@@ -41,7 +41,7 @@ body {
 }
 
 .dropdownList {
-    display: block;
+	display: block;
 	height: 30px;
 	width: 400px;
 	border-bottom: 1px solid grey;
@@ -105,36 +105,36 @@ body {
 }
 
 .form form .bottom input[type="text"] {
-  padding: 3px 3px 1px 3px;
-  width: 340px;
-  height: 35px;
-  float: left;
-  background-color: transparent;
-  font-size: 15px;
-  font-weight:400;
-  color: rgba(38, 38, 38, 1.);
-  -webkit-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  transition: all .3s ease;
-  border: 0px;
-  position: relative;
-  word-wrap: break-word;
+	padding: 3px 3px 1px 3px;
+	width: 340px;
+	height: 35px;
+	float: left;
+	background-color: transparent;
+	font-size: 15px;
+	font-weight:400;
+	color: rgba(38, 38, 38, 1.);
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+	border: 0px;
+	position: relative;
+	word-wrap: break-word;
 
--webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.2)
-}
+	-webkit-input-placeholder {
+		color: rgba(255, 255, 255, 0.2)
+	}
 
-:-moz-placeholder {
-  color: rgba(255, 255, 255, 0.2)
-}
+	:-moz-placeholder {
+		color: rgba(255, 255, 255, 0.2)
+	}
 
-:-moz-placeholder {
-  color: rgba(255, 255, 255, 0.2)
-}
+	:-moz-placeholder {
+		color: rgba(255, 255, 255, 0.2)
+	}
 
-:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.2)
-}
+	:-ms-input-placeholder {
+		color: rgba(255, 255, 255, 0.2)
+	}
 
 }
 

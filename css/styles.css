@@ -62,21 +62,21 @@ p.searchInput input[type="text"] {
   position: relative;
   word-wrap: break-word;
 
--webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.2)
-}
+  -webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.2)
+  }
 
-:-moz-placeholder {
-  color: rgba(255, 255, 255, 0.2)
-}
+  :-moz-placeholder {
+    color: rgba(255, 255, 255, 0.2)
+  }
 
-:-moz-placeholder {
-  color: rgba(255, 255, 255, 0.2)
-}
+  :-moz-placeholder {
+    color: rgba(255, 255, 255, 0.2)
+  }
 
-:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.2)
-}
+  :-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.2)
+  }
   
 }
 
@@ -147,7 +147,7 @@ hr {
 /*  -webkit-transition: .3s ease-in-out;
   -moz-transition:all .3s ease-in-out;
   -ms-transition:all .3s ease-in-out;*/
- 
+  
 }
 
 .messagesList {
@@ -223,11 +223,11 @@ img {
 }
 
 .messageDetails p.date {
-line-height: normal;
-margin: 0px;
-width: 100%;
-float: left;
-font-size: 80%
+  line-height: normal;
+  margin: 0px;
+  width: 100%;
+  float: left;
+  font-size: 80%
 
 }
 
@@ -271,5 +271,5 @@ font-size: 80%
 }
 
 #conversation {
-cursor: pointer;
+  cursor: pointer;
 }

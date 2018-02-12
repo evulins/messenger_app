@@ -15,14 +15,14 @@ body {
 
 
 .chat {
-  border: 3px solid #613e75;
-  width: 400px;
-  height: 600px;
-  margin-left: 20px;
-  margin-right: 0px;
-  box-shadow: rgba(24,26,26,1);
-  background-color: white;
-  position: relative;
+	border: 3px solid #613e75;
+	width: 400px;
+	height: 600px;
+	margin-left: 20px;
+	margin-right: 0px;
+	box-shadow: rgba(24,26,26,1);
+	background-color: white;
+	position: relative;
 }
 
 .chat .topBar {
@@ -177,19 +177,19 @@ div.reply .avatar {
 	word-wrap: break-word;
 
 	-webkit-input-placeholder {
-	color: rgba(255, 255, 255, 0.2)
+		color: rgba(255, 255, 255, 0.2)
 	}
 
 	:-moz-placeholder {
-	color: rgba(255, 255, 255, 0.2)
+		color: rgba(255, 255, 255, 0.2)
 	}
 
 	:-moz-placeholder {
-	color: rgba(255, 255, 255, 0.2)
+		color: rgba(255, 255, 255, 0.2)
 	}
 
 	:-ms-input-placeholder {
-	color: rgba(255, 255, 255, 0.2)
+		color: rgba(255, 255, 255, 0.2)
 	}
 }
 
